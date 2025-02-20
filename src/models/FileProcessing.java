@@ -7,14 +7,50 @@ import src.datatypes.Tuple5;
 import src.datatypes.Pair;
 
 public class FileProcessing {
+    public String fn;
+
+    public String getOutputFilenameCleaned() {
+        return "output/out_" + fn.substring(0, fn.lastIndexOf('.'));
+    }
+
+    public void writeOutput(int iter, int[][] board, double exTime) {
+        try {
+            String fileName = "output/out_" + fn;
+            File file = new File(fileName);
+            try (Formatter formatter = new Formatter(fileName)) {
+
+                for (int i = 0; i < board.length; i++) {
+                    for (int j = 0; j < board[i].length; j++) {
+                        if (board[i][j] == -1) {
+                            formatter.format(" ");
+                        } else if (board[i][j] == 0) {
+                            formatter.format("X");
+                        } else {
+                            formatter.format("%c", (char) ('A' + board[i][j] - 1));
+                        }
+                    }
+                    formatter.format("\n");
+                }
+                formatter.format("\nWaktu Eksekusi: %.3f ms\n", exTime);
+                formatter.format("Banyak kasus ditinjau: %d", iter);
+            }
+            System.out.println("Output ditulis di " + fileName);
+        } catch (Exception e) {
+            System.out.println("Error: gagal menulis output.");
+            e.printStackTrace();
+        }
+    }
+
     public Tuple5 readInput(String fileName) {
+        this.fn = fileName;
+        fileName = "test/" + fileName;
         int N, M, P;
         int currLine = 1;
         List<Pair<Character, List<List<List<Integer>>>>> pieces = new ArrayList<>();
 
         try (Scanner scanner = new Scanner(new File(fileName))) {
             // Baca baris pertama (N, M, P)
-            if (!scanner.hasNextLine()){
+            if (!scanner.hasNextLine()) {
                 System.out.println("Input kosong pada line " + currLine + ".");
                 return null;
             }
@@ -38,7 +74,7 @@ public class FileProcessing {
             currLine++;
 
             // Baca board type
-            if (!scanner.hasNextLine()){
+            if (!scanner.hasNextLine()) {
                 System.out.println("Board type tidak ditemukan pada line " + currLine + ".");
                 return null;
             }
@@ -59,7 +95,8 @@ public class FileProcessing {
             } else if (boardType.equals("CUSTOM")) {
                 for (int i = 0; i < N; i++) {
                     if (!scanner.hasNextLine()) {
-                        System.out.println("Input board kurang, diharapkan ada baris untuk board pada line " + currLine + ".");
+                        System.out.println(
+                                "Input board kurang, diharapkan ada baris untuk board pada line " + currLine + ".");
                         return null;
                     }
                     line = scanner.nextLine();
@@ -76,7 +113,8 @@ public class FileProcessing {
                         } else if (c == 'X') {
                             board[i][j] = 0;
                         } else {
-                            System.out.println("Error: Hanya boleh ada '.' atau 'X' pada board di line " + currLine + ".");
+                            System.out.println(
+                                    "Error: Hanya boleh ada '.' atau 'X' pada board di line " + currLine + ".");
                             return null;
                         }
                     }
@@ -103,7 +141,8 @@ public class FileProcessing {
             // Baca piece sebanyak P
             for (int count = 0; count < P; count++) {
                 if (index >= pieceLines.size()) {
-                    System.out.println("Piece kurang dari yang diharapkan. Diharapkan " + P + " piece, tetapi hanya ditemukan " + count + ".");
+                    System.out.println("Piece kurang dari yang diharapkan. Diharapkan " + P
+                            + " piece, tetapi hanya ditemukan " + count + ".");
                     return null;
                 }
                 String firstPieceLine = pieceLines.get(index);
@@ -154,16 +193,16 @@ public class FileProcessing {
                     for (int i = 0; i < maxLen; i++) {
                         if (i < s.length()) {
                             char c = s.charAt(i);
-                            if(c == id){
+                            if (c == id) {
                                 row.add(1);
-                            } else if (c == ' '){
+                            } else if (c == ' ') {
                                 row.add(0);
                             } else {
-                                System.out.println("Error: Piece " + id + " tidak valid pada line " + shapeLineNo + ".");
-                                return null;   
-                            } 
-                        }
-                        else {
+                                System.out
+                                        .println("Error: Piece " + id + " tidak valid pada line " + shapeLineNo + ".");
+                                return null;
+                            }
+                        } else {
                             row.add(0);
                         }
                     }
@@ -174,15 +213,17 @@ public class FileProcessing {
                 pi.add(shape);
                 pieces.add(new Pair<>(id, pi));
             }
-            
+
             // Pastikan tidak ada baris non-kosong tersisa yang tidak terproses
             for (int i = index; i < pieceLines.size(); i++) {
                 if (!pieceLines.get(i).trim().isEmpty()) {
-                    System.out.println("Error: Input memiliki lebih banyak piece daripada yang diharapkan, terdapat baris non-kosong pada line " + pieceLineNumbers.get(i) + ".");
+                    System.out.println(
+                            "Error: Input memiliki lebih banyak piece daripada yang diharapkan, terdapat baris non-kosong pada line "
+                                    + pieceLineNumbers.get(i) + ".");
                     return null;
                 }
             }
-            
+
             return new Tuple5(N, M, board, P, pieces);
         } catch (FileNotFoundException e) {
             System.out.println("Input file not found.");
