@@ -1,0 +1,8 @@
+   Z   
+ DCZZZ 
+CCCCBBB
+ AAABB 
+   A   
+
+Waktu Eksekusi: 1.618 ms
+Banyak kasus ditinjau: 168

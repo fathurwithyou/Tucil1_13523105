@@ -16,5 +16,4 @@ public class Tuple5 {
         this.P = P;
         this.piece = piece;
     }
-
 }

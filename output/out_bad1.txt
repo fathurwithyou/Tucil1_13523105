@@ -1,0 +1,9 @@
+   X   
+ XXXXX 
+XXXXXXX
+ XXXXX 
+   X   
+ XXXXX 
+
+Waktu Eksekusi: 10.988 ms
+Banyak kasus ditinjau: 24835

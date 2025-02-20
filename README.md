@@ -63,6 +63,10 @@ Program menerima input melalui objek `Tuple5` yang memuat:
 
 ### Output
 - **Konsol:** Menampilkan board dengan penempatan potongan, dengan warna berbeda untuk tiap potongan.
-- **Gambar:** Solusi disimpan sebagai file gambar (contoh: `puzzle_solution.png`) menggunakan kelas `ImageGenerator`.
-
+- **Gambar:** Solusi disimpan sebagai file gambar menggunakan kelas `ImageGenerator`.
+- **TXT File:** Solusi ditulis sebagai file txt menggunakan kelas `FileProcessing`.
 ---
+## Author
+| Nama | NIM | Kelas |
+|------|---|---|
+| Muhammad Fathur Rizky | 13523105 | K02 |  
