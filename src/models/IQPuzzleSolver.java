@@ -7,12 +7,13 @@ import java.util.Scanner;
 import java.util.Stack;
 
 public class IQPuzzleSolver {
-    private boolean f = false;
+    public boolean f = false;
+    public double exTime;
+    public int it = 0;
     private boolean[] vis = new boolean[26];
-    private int r, c, p;
-    private int[][] b;
+    public int r, c, p;
+    public int[][] b;
     private List<Pair<Character, List<List<List<Integer>>>>> ps;
-    private int it = 0;
 
     private static class Pos {
         int[][] b;
@@ -188,22 +189,10 @@ public class IQPuzzleSolver {
             System.out.println("No solution");
         }
 
-        double exTime = (et - st) / 1e6;
+        this.exTime = (et - st) / 1e6;
         System.out.println();
         System.out.println("Waktu eksekusi: " + exTime + " ms");
         System.out.println("Banyak kasus yang ditinjau: " + it);
 
-        if (f) {
-            Scanner sc = new Scanner(System.in);
-            System.out.print("Apakah Anda ingin menyimpan gambar puzzle? (y/n) ");
-            String ans = sc.next();
-
-            if (!ans.equals("y") && !ans.equals("Y") && !ans.equals("ya") && !ans.equals("Ya")) {
-                return;
-            }
-
-            ImageGenerator imgGen = new ImageGenerator(r, c, b);
-            imgGen.genImg("puzzle_solution.png");
-        }
     }
 }
