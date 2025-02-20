@@ -12,8 +12,9 @@ Solusi yang ditemukan akan ditampilkan di konsol dengan representasi warna berda
 ## Struktur Proyek
 ```
 .
-├── bin
-├── doc
+├── bin/
+├── doc/
+├── output/
 ├── src
 │   ├── datatypes
 │   │   ├── Pair.java
@@ -22,14 +23,11 @@ Solusi yang ditemukan akan ditampilkan di konsol dengan representasi warna berda
 │       ├── GenerateVariants.java
 │       ├── IQPuzzleSolver.java
 │       └── ImageGenerator.java
-├── test
-│   ├── bad1.txt
-│   └── input1.txt
+├── test/
 ├── LICENSE
 ├── Main.java
 ├── README.md
 └── run.bat
-
 ```
 
 ## Cara Menjalankan Program
