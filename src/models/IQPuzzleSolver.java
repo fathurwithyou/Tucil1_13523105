@@ -3,6 +3,7 @@ package src.models;
 import src.datatypes.Tuple5;
 import src.datatypes.Pair;
 import java.util.List;
+import java.util.Scanner;
 import java.util.Stack;
 
 public class IQPuzzleSolver {
@@ -25,7 +26,8 @@ public class IQPuzzleSolver {
         }
     }
 
-    public IQPuzzleSolver() {}
+    public IQPuzzleSolver() {
+    }
 
     private int[][] cpy(int[][] o) {
         int rs = o.length;
@@ -141,12 +143,12 @@ public class IQPuzzleSolver {
 
     private String getColor(char l) {
         String[] colors = {
-            "\u001B[31m", "\u001B[32m", "\u001B[33m", "\u001B[34m", "\u001B[35m", "\u001B[36m",
-            "\u001B[91m", "\u001B[92m", "\u001B[93m", "\u001B[94m", "\u001B[95m", "\u001B[96m",
-            "\u001B[37m", "\u001B[90m", "\u001B[38;5;208m", "\u001B[38;5;45m", "\u001B[38;5;81m",
-            "\u001B[38;5;141m", "\u001B[38;5;129m", "\u001B[38;5;87m", "\u001B[38;5;220m",
-            "\u001B[38;5;214m", "\u001B[38;5;51m", "\u001B[38;5;201m", "\u001B[38;5;105m",
-            "\u001B[38;5;170m"
+                "\u001B[31m", "\u001B[32m", "\u001B[33m", "\u001B[34m", "\u001B[35m", "\u001B[36m",
+                "\u001B[91m", "\u001B[92m", "\u001B[93m", "\u001B[94m", "\u001B[95m", "\u001B[96m",
+                "\u001B[37m", "\u001B[90m", "\u001B[38;5;208m", "\u001B[38;5;45m", "\u001B[38;5;81m",
+                "\u001B[38;5;141m", "\u001B[38;5;129m", "\u001B[38;5;87m", "\u001B[38;5;220m",
+                "\u001B[38;5;214m", "\u001B[38;5;51m", "\u001B[38;5;201m", "\u001B[38;5;105m",
+                "\u001B[38;5;170m"
         };
         int idx = l - 'A';
         if (idx < 0 || idx >= colors.length)
@@ -182,15 +184,26 @@ public class IQPuzzleSolver {
             }
             System.out.print("\u001B[0m");
 
-            ImageGenerator imgGen = new ImageGenerator(r, c, b);
-            imgGen.genImg("puzzle_solution.png");
         } else {
             System.out.println("No solution");
         }
 
         double exTime = (et - st) / 1e6;
         System.out.println();
-        System.out.println("Execution time: " + exTime + " ms");
-        System.out.println("Iterations: " + it);
+        System.out.println("Waktu eksekusi: " + exTime + " ms");
+        System.out.println("Banyak kasus yang ditinjau: " + it);
+
+        if (f) {
+            Scanner sc = new Scanner(System.in);
+            System.out.print("Apakah Anda ingin menyimpan gambar puzzle? (y/n) ");
+            String ans = sc.next();
+
+            if (!ans.equals("y") && !ans.equals("Y") && !ans.equals("ya") && !ans.equals("Ya")) {
+                return;
+            }
+
+            ImageGenerator imgGen = new ImageGenerator(r, c, b);
+            imgGen.genImg("puzzle_solution.png");
+        }
     }
 }
