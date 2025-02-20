@@ -25,7 +25,7 @@ Solusi yang ditemukan akan ditampilkan di konsol dengan representasi warna berda
 ├── test
 │   ├── bad1.txt
 │   └── input1.txt
-├── LICENSE (opsional)
+├── LICENSE
 ├── Main.java
 ├── README.md
 └── run.bat
