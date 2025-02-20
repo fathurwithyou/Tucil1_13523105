@@ -20,6 +20,7 @@ Solusi yang ditemukan akan ditampilkan di konsol dengan representasi warna berda
 │   │   ├── Pair.java
 │   │   └── Tuple5.java
 │   └── models
+│       ├── FileProcessing.java
 │       ├── GenerateVariants.java
 │       ├── IQPuzzleSolver.java
 │       └── ImageGenerator.java
