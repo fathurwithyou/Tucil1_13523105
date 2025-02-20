@@ -53,6 +53,7 @@ public class ImageGenerator {
     }
 
     public void genImg(String file) {
+        file += ".png";
         int cs = 50;
         int w = c * cs;
         int h = r * cs;
@@ -95,7 +96,7 @@ public class ImageGenerator {
 
         try {
             ImageIO.write(img, "png", new File(file));
-            System.out.println("Gambar disimpan pada file " + file);
+            System.out.println("Gambar disimpan di " + file);
         } catch (IOException e) {
             System.out.println("Error: pembuatan gambar gagal");
         }
