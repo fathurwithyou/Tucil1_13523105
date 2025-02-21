@@ -1,5 +1,5 @@
 # IQ Puzzle Solver
-![Java 11](https://img.shields.io/badge/Java-11-blue?logo=java&logoColor=white)
+![Java 17](https://img.shields.io/badge/Java-17-blue?logo=java&logoColor=white)
 
 
 IQ Puzzle Solver adalah program yang dirancang untuk menyelesaikan puzzle IQ menggunakan algoritma brute-force. Program ini mencoba menempatkan potongan-potongan puzzle ke dalam sebuah papan (board) dengan cara:
@@ -30,6 +30,14 @@ Solusi yang ditemukan akan ditampilkan di konsol dengan representasi warna berda
 ├── README.md
 └── run.bat
 ```
+
+## Instalasi
+### 1. Linux
+```
+sudo apt install openjdk-17-jdk
+```
+### 2. Windows
+Instal Java 17 ke atas pada link berikut. https://www.oracle.com/id/java/technologies/downloads/
 
 ## Cara Menjalankan Program
 
