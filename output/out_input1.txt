@@ -4,5 +4,5 @@ GDDEE
 CDBBA
 CCBAA
 
-Waktu Eksekusi: 3.264 ms
+Waktu Eksekusi: 2.015 ms
 Banyak kasus ditinjau: 587

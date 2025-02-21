@@ -4,5 +4,5 @@ CCCCBBB
  AAABB 
    A   
 
-Waktu Eksekusi: 1.618 ms
+Waktu Eksekusi: 1.209 ms
 Banyak kasus ditinjau: 168

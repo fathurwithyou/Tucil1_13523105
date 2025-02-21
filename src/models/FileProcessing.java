@@ -24,7 +24,7 @@ public class FileProcessing {
                         if (board[i][j] == -1) {
                             formatter.format(" ");
                         } else if (board[i][j] == 0) {
-                            formatter.format("X");
+                            formatter.format("?");
                         } else {
                             formatter.format("%c", (char) ('A' + board[i][j] - 1));
                         }
