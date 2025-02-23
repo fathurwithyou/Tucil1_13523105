@@ -1,0 +1,9 @@
+FFAAAA
+FFAGCA
+FFACCA
+FFAAAA
+BBEEDD
+BEEDDD
+
+Waktu Eksekusi: 20.131 ms
+Banyak kasus ditinjau: 27454
