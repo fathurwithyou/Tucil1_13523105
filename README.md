@@ -11,15 +11,15 @@ Solusi yang ditemukan akan ditampilkan di konsol dengan representasi warna berda
 
 ## Struktur Proyek
 ```
-.
+Tucil1_13523105/
 ├── bin/
 ├── doc/
 ├── output/
-├── src
-│   ├── datatypes
+├── src/
+│   ├── datatypes/
 │   │   ├── Pair.java
 │   │   └── Tuple5.java
-│   └── models
+│   └── models/
 │       ├── FileProcessing.java
 │       ├── GenerateVariants.java
 │       ├── IQPuzzleSolver.java
@@ -72,7 +72,24 @@ Program menerima input melalui objek `Tuple5` yang memuat:
 - **Konsol:** Menampilkan board dengan penempatan potongan, dengan warna berbeda untuk tiap potongan.
 - **Gambar:** Solusi disimpan sebagai file gambar menggunakan kelas `ImageGenerator`.
 - **TXT File:** Solusi ditulis sebagai file txt menggunakan kelas `FileProcessing`.
----
+
+### File Input
+```
+N M P
+BoardType
+<Piece 1>
+<Piece 2>
+...
+<Piece P>
+```
+Lihat contoh pada folder test.
+
+## Usage
+Ketik `<nama_file>` dengan format txt seperti `input2.txt` setelah program dijalankan.
+
+![alt text](image.png)
+
+
 ## Author
 | Nama | NIM | Kelas |
 |------|---|---|
