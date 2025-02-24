@@ -1,6 +1,7 @@
-# IQ Puzzle Solver
+# IQ Puzzle Pro Solver
 ![Java 17](https://img.shields.io/badge/Java-17-blue?logo=java&logoColor=white)
 
+![image](https://github.com/user-attachments/assets/09b0b155-382a-4776-9fac-c25b272880db)
 
 IQ Puzzle Solver adalah program yang dirancang untuk menyelesaikan puzzle IQ menggunakan algoritma brute-force. Program ini mencoba menempatkan potongan-potongan puzzle ke dalam sebuah papan (board) dengan cara:
 - Mencari sel kosong (sel dengan nilai 0)
